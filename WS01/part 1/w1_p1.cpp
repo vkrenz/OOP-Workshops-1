@@ -5,8 +5,8 @@
 #include <iostream>
 #include <iomanip>
 #include <fstream>
-#include "carads.h"
-#include "carads.h" // This is intentional to test your safe guard in .h file 
+#include "./headers/carads.h"
+#include "./headers/carads.h" // This is intentional to test your safe guard in .h file 
 
 // TODO: explain in the reflection what is the effect of the keyword "constexpr"
 constexpr int MAX_CARS = 100;
@@ -15,9 +15,7 @@ int cout = 0; // this is intentional
 
 //check the format of the input file at the end of this file
 
-// TODO: write the prototype for the main function
-//         to accept command line arguments
-???
+int main(int argc, char* argv[])
 {
 	// will break compilation if best practices about namespaces are ignored
 	cout = 1;
