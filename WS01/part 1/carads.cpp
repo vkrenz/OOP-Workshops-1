@@ -112,7 +112,7 @@ namespace sdds {
     }
 
     double Cars::getSpecialPrice() const {
-        return m_isPromotion ? m_price - (m_price * g_discount) + ((m_price * g_discount) * g_taxrate) : m_price;
+        return m_isPromotion ? getPriceWithTax() - (getPriceWithTax() * g_discount) : m_price;
     }
 
 } // namespace sdds 

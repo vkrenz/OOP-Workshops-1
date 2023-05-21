@@ -1,0 +1,28 @@
+/**
+ * @author Victor Krenzel - 102446176
+ * @date 05/20/2023
+ * 
+ * I have done all the coding by myself 
+ * and only copied the code that my professor 
+ * provided to complete my workshops and assignments.
+*/
+
+My biggest issue this workshop was working with CSV text files, more specifically reading, 
+and displaying them. The bulk of my time was trying to read and store the values. The `getline()` 
+and `ignore()` functions helped me out very much in accomplishing that. After the values 
+were stored correctly it wasn't difficult to display them thanks to the `iomanip` library.
+
+Internal linkage in C++ is when variables and functions are only visible and accessible to their 
+own source code file. They can be identified using the `static` keyword. This can be seen in my `display()` 
+function from the `carads` module. The benefit of making the counter variable `static` is to make 
+sure it doesn’t reset every time the `display()` function is called.
+
+External linkage is when variables and functions are visible and can be accessed from other source files. External linkage 
+can be specified with the `extern` keyword in front of the variable declaration. An example from my code is in the `carads.h` 
+header file, I have 2 `extern` variables in the global scope. I have `g_taxrate` and `g_discount` which are initialized to 
+their safe state in the `carads.cpp` file.
+
+The main changes that I’ve made in the `carads.h` file, specifically the `Cars` class, besides adding a bunch of different 
+setters, was change the `m_brand` variable into a c-style null terminated string that can accept any amount of characters. 
+This created a possibility of memory leakage in my code, meaning I also had to manually create a 
+destructor to delete `m_brand`.
