@@ -1,0 +1,20 @@
+/**
+ * @author Victor Krenzel - 102446176
+ * @date 2023-05-28
+*/
+
+By completing this workshop I've learnt more about working with CSV files, using the input file stream object, and counting the number of records that are in the CSV file.
+A new concept I have learnt is working with the `std::chrono` library, which I can use to monitor the time a particular task takes. I also learnt more about the rule of 5, which
+is copy assignment operator, copy constructor, and destructor, and also move assignment operator and move constructor. The problems I encountered working on this workshop were with 
+the CSV files, as I always have a hard time reading and writing with them, but once I got over that barrier it was much easier to work with the stored values from the CSV file.
+
+The significant time difference between the copy and move operators is because of the differences in the underlying implementation. The copy constructor `TennisLog::TennisLog(const TennisLog& old)`
+does a deep copy of the TennisMatch array, which in turn creates a new array `m_matches`. The copy constructor has to allocate memory for each TennisMatch object. The move constructor `TennisLog::TennisLog(TennisLog&& old)`,
+performs a shallow copy, which simply just transfers the ownership of the TennisMatch array. It doesn't copy each individual element, but assigns a pointer to the source array which is `old.m_matches`.
+
+The TennisLog constructor reads in `tennis-dava.csv` as a char array `filename` as an input, and attempts to open via ifstream object. The constructor counts the number of records and stores it into `m_match_count`.
+After counting the old file is closed, and opened again as a new one and skips the first line. It then allocates new memory for the `m_matches` array and then loops over every record and stores it.
+Finally, the file is then closed again. To avoid re-reading the file every time, simply allow the constructor to receive an already opened ifstream object as a parameter.
+
+`steady_clock` and `system_clock` are both clock types that are in the `std::chrono` library, and are similar in some aspects. Steady clock simply put is a more reliable and consistant measure of time. It is used more for performance intensive tasks,
+such as timers or benchmarking. On the other hand System clock represents the current time that is according to the machine. It is used more for tasks such as displaying or tracking the current time or scheduling events. 
