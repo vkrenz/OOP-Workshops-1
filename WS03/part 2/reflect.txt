@@ -1,0 +1,12 @@
+/**
+ * @file reflect.txt
+ * @author Victor Krenzel - 102446176
+ * @date 2023-06-04
+ */
+
+ Completing this workshop has helped me learn and grasp template classes and member functions better. I also learnt how to properly specialize a member function that can accept a specific type.
+ After learning more about designing and creating a template class, I also have learnt about deriving a template class from another template class. This also helped me learn about template class variables too.
+
+ For the second part of the workshop I had to specialize the member function `push()` is to make sure it enables inclusion polymorphism. It allows for more operations and other validations to be performed when using
+ the `push()` member function. Another thing I had to do was make the definition for the class variable outside of the class definition is to prevent multiple redefitions when working with classes in larger projects, and
+ it also is better in terms of memory allocation.
