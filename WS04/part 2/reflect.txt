@@ -1,0 +1,18 @@
+/**
+ * @file reflect.cpp
+ * @author Victor Krenzel 102446176
+ * @date 2023-06-11
+ */
+
+ By completing this workshop, I've learnt more about code composition and class aggregation class relationship. I also used member functions from the string class
+ to parse a string into tokens based on simple rules. Lastly, I've also got a better grip of coding classes that manage a dynamically allocated array of pointers to objects.
+
+ The main difference between composition and aggregation is the level of control and ownership that the owner has over the objects. With composition, the owner object has
+ responsibility to create, manage and also destroy the associated objects. The objects that are associated have a tight bond to the owner, meaning their existence is dependent on the
+ owner. Normally, when implementing composition, the owner class performs a deep copy in a copy function and also a ownership transfer in a move function. On the other hand, 
+ using aggregation, the associated objects are independent and can exist outside of the owner object. There is a "has-a" type of relationship, meaning the owner does not control the
+ associated object's lifecycle. When implementing aggregation, the owner performs a shallow copy.
+
+ The `ConfirmationSender` class has an association with the `Reservation` class through the pointer array `m_reservations`, which is used to store the pointers to the `Reservation` objects.
+ In the class `Restaurant`, there is an aggregation type of relationship with the `Reservation` class also using a pointer array `m_reservations`. The `Restaurant` class owns the
+ `Reservation` object, but the `Reservation` object be independent of the `Restaurant` class.
